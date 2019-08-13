@@ -1,23 +1,14 @@
 <template>
   <div id="app" v-bind:class="[state]">
     <header class="header">
-      <div class="box">
-        <p>app</p>
-      </div>
+      <!-- <search-box></search-box> -->
     </header>
-    <router-view class="view" id='view'></router-view>
-    <footer class="footer">
-      <ul>
-          <li><router-link to='/home'>首页</router-link></li>
-          <li><router-link to='/tab1'>tab1</router-link></li>
-          <li><router-link to='/tab2'>tab2</router-link></li>
-          <li><router-link to='/about'>关于</router-link></li>
-      </ul>
-    </footer>
+    <router-view class="maincontent" id='view'></router-view>
   </div>
 </template>
 
 <script>
+// import searchBox from './component/search/index.vue'
 export default {
   name: 'app',
   data () {
@@ -36,7 +27,9 @@ export default {
       this.state = 'roll-up'
     }
   },
-  components: {}
+  components: {
+		// searchBox
+	}
 }
 </script>
 
@@ -52,12 +45,12 @@ export default {
  html,body {
    width: 100%;
    height: 100%;
-   overflow: hidden;
    margin: 0;
    padding: 0;
+	 background-color: aliceblue;
  }
  .header{
-   border: 1px solid #c3c3c3
+   border-bottom: 1px solid #c3c3c3
  }
  .header >.box{
    height: 38px;
@@ -69,24 +62,11 @@ export default {
    font-size: 12px;
  }
 
+.maincontent{
+	width: 100%;
+	margin: 0 0 40px 0;
+}
 
-.footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 38px;
-    line-height: 38px;
-    border-top: 1px solid #c3c3c3;
-}
-.footer li{
-    float: left;
-    text-decoration: none;
-    font-size: 14px;
-    width: 25%;
-    text-align: center;
-    padding:0;
-    margin:0;
-    list-style:none
-}
+
 
 </style>
