@@ -15,6 +15,7 @@ Vue.prototype.$qs=qs
 import http from './config/http'
 Vue.prototype.http = http   //放入全局
 
+
 new Vue({
   el: '#app',
   template: '<App/>',

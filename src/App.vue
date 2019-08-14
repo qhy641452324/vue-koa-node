@@ -47,7 +47,7 @@ export default {
    height: 100%;
    margin: 0;
    padding: 0;
-	 background-color: aliceblue;
+	 background-color: #fff;
  }
  .header{
    border-bottom: 1px solid #c3c3c3
