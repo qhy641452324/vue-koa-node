@@ -34,6 +34,11 @@
 				</table>
 			</div>
 		</div>
+
+		<div class="aplayer">
+			<aplayer autoplay :music="musicList"></aplayer>
+		</div>
+
 		<footernav></footernav>
 	</div>
 </template>
@@ -45,11 +50,22 @@
 	require('video.js/dist/video-js.css')
 	require('vue-video-player/src/custom-theme.css')
 	Vue.use(VideoPlayer)
+
+	import aplayer from 'vue-aplayer'
+	Vue.use(aplayer)
+
 	export default {
 		data() {
 			return {
 				listinfos: [],
-				playerOptions:{}
+				playerOptions:{},
+				musicList: {
+					title: "youkao100",
+					author: "youkao100",
+					url: 'https://m8.music.126.net/20190814174449/70ffc1aac76343367f7e6c803d85a466/ymusic/5652/5409/5209/a843a38abfcc5ba0c696ec68eb47e2a2.mp3',
+					pic: "",
+					lrc: "[00:00.00]lrc here\n[00:01.00]aplayer"
+				}
 			}
 		},
 		created() {
@@ -96,7 +112,8 @@
 			}
 		},
 		components: {
-			footernav
+			footernav,
+			aplayer
 		}
 	}
 </script>
@@ -144,6 +161,7 @@ table{
     text-overflow: ellipsis;
     white-space: nowrap;
 	padding:0 6px;
+	flex-wrap: nowrap
 }
 .list-wrap .item img{
 	width: 12px;
@@ -163,5 +181,10 @@ table{
     text-overflow: ellipsis;
     white-space: nowrap;
 	margin-left: .3rem;
+}
+.aplayer{
+	padding:10px 0;
+	position: fixed;
+	bottom: 38px
 }
 </style>

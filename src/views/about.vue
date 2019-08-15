@@ -1,6 +1,7 @@
 <template lang="html">
   <div>
     <div class="about">
+	  <button><router-link to='/about/child'>嵌套路由测试</router-link></button>
       <p>About Me</p>
 	<h3>{{$store.state.count}}</h3>
 	<div>
@@ -12,7 +13,8 @@
 		<button @click="handleActionsReduce(10)">异步减少</button>
 	</div>
     </div>
-		<footernav></footernav>
+	<router-view></router-view>
+	<footernav></footernav>
   </div>
 </template>
 

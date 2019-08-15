@@ -67,6 +67,7 @@ export default {
 	margin: 0 0 40px 0;
 }
 
-
-
+/* 引入外部的css文件 */
+/* @import url('style/main.css'); */
+/* @import 'style/main.css'; */
 </style>
